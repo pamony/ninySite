@@ -17,24 +17,24 @@ function haptic(pattern = [30]) {
 // =============================================
 // LOCAL MUSIC PLAYER — "Perfect" Ed Sheeran
 // =============================================
-const bgMusic = document.getElementById('bg-music');
 let musicPlaying = false;
 
-function toggleMusic() {
+function toggleMusic(forcePlay = false) {
+  const bgMusic = document.getElementById('bg-music');
   const btn = document.getElementById('music-btn');
   const playIcon = btn.querySelector('.playing-icon');
   const pauseIcon = btn.querySelector('.paused-icon');
 
   if (!bgMusic) return;
 
-  if (musicPlaying) {
+  if (musicPlaying && !forcePlay) {
     bgMusic.pause();
     musicPlaying = false;
     btn.classList.remove('is-playing');
     playIcon.style.display = '';
     pauseIcon.style.display = 'none';
   } else {
-    // Browsers might block autoplay, but since this is triggered by a click, it will work.
+    // Browsers block autoplay until interaction. ForcePlay handles the 'start' button click.
     bgMusic.play().then(() => {
       musicPlaying = true;
       btn.classList.add('is-playing');
@@ -42,8 +42,7 @@ function toggleMusic() {
       pauseIcon.style.display = '';
       haptic([30, 20, 30]);
     }).catch(err => {
-      console.error("Audio playback failed:", err);
-      btn.title = "Playback blocked. Try again.";
+      console.warn("Audio playback delayed until interaction:", err);
     });
   }
 }
@@ -280,6 +279,9 @@ function startCelebration() {
   haptic([50, 30, 50, 30, 100]); // celebratory vibration pattern
   launchConfettiBurst(canvas.width / 2, canvas.height / 3, 150);
   rainConfetti(4000);
+
+  // Start Music (Autoplay fix)
+  toggleMusic(true);
 
   // Scroll to next section smoothly
   setTimeout(() => {
