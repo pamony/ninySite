@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Nina 🎂</title>
+  <meta name="description" content="A special birthday celebration for the most amazing Nina 🧡" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ======= CANVAS FOR CONFETTI ======= -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ======= FLOATING PARTICLES ======= -->
+  <div id="particles-container"></div>
+
+  <!-- ======= CURSOR SPARKLE ======= -->
+  <div id="cursor-sparkle"></div>
+
+  <!-- ======= NAVIGATION DOTS ======= -->
+  <nav class="nav-dots" id="nav-dots">
+    <a href="#hero" class="dot active" title="Home"></a>
+    <a href="#message" class="dot" title="Message"></a>
+    <a href="#gallery" class="dot" title="Gallery"></a>
+    <a href="#cards" class="dot" title="Why I Love You"></a>
+    <a href="#finale" class="dot" title="Finale"></a>
+  </nav>
+
+  <!-- ======= SECTION 1: HERO ======= -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-bg-glow"></div>
+
+    <div class="hero-content">
+      <div class="birthday-badge">🎂 Today is your day</div>
+
+      <h1 class="hero-title">
+        <span class="title-line">Happy</span>
+        <span class="title-line accent">Birthday</span>
+        <span class="title-line name-shine">Nina</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        The world became a more beautiful place the day you were born 🧡
+      </p>
+
+      <div class="hero-date">April 21st, 2026 🎂</div>
+
+      <!-- LIVE TOGETHER COUNTER -->
+      <div class="counter-wrapper">
+        <p class="counter-label">We've been together for</p>
+        <div class="counter-display" id="counter-display">
+          <span class="counter-unit"><strong>--</strong><small>days</small></span>
+          <span class="counter-sep">:</span>
+          <span class="counter-unit"><strong>--</strong><small>hours</small></span>
+          <span class="counter-sep">:</span>
+          <span class="counter-unit"><strong>--</strong><small>mins</small></span>
+          <span class="counter-sep">:</span>
+          <span class="counter-unit"><strong>--</strong><small>secs</small></span>
+        </div>
+      </div>
+
+      <button class="cta-button" id="start-btn" onclick="startCelebration()">
+        <span>✨ Open this Gift ✨</span>
+      </button>
+
+      <div class="scroll-hint">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+
+    <div class="floating-emojis">
+      <span class="float-emoji" style="--delay: 0s; --left: 10%">🎂</span>
+      <span class="float-emoji" style="--delay: 0.5s; --left: 85%">🎁</span>
+      <span class="float-emoji" style="--delay: 1s; --left: 20%">✨</span>
+      <span class="float-emoji" style="--delay: 1.5s; --left: 70%">🌸</span>
+      <span class="float-emoji" style="--delay: 2s; --left: 50%">🧡</span>
+      <span class="float-emoji" style="--delay: 2.5s; --left: 35%">⭐</span>
+      <span class="float-emoji" style="--delay: 3s; --left: 90%">🎉</span>
+      <span class="float-emoji" style="--delay: 0.8s; --left: 60%">💫</span>
+    </div>
+  </section>
+
+  <!-- ======= SECTION 2: LOVE MESSAGE ======= -->
+  <section id="message" class="section message-section">
+    <div class="section-glow"></div>
+    <div class="section-content">
+      <div class="section-tag">💌 A Message For You</div>
+      <h2 class="section-title">From My Heart to Yours</h2>
+
+      <div class="letter-container">
+        <div class="letter-inner">
+          <div class="letter-header">
+            <span class="letter-dear">Mona-Nina,</span>
+          </div>
+          <div class="letter-body" id="letter-body">
+            <p>
+              What more can I say? Time would fail me if I tried to sing or speak of who you are to me, what you've done for me, and what you truly mean to me.
+            </p>
+            <p>
+              You stood tall when everything else fell apart. You are still standing there, rooting for me more than I could ever fathom.
+            </p>
+            <p>
+              We've both been there before — we know that 'butterflies' are often just infatuation. But I've learned that love isn't just an emotion or a feeling. Love is a verb. It is kind, patient, and long-suffering. It does not compete, it does not despise, and it does not condemn. <em>You have shown me what love actually is. You are my love.</em>
+            </p>
+            <p>
+              In you, I found a friend, a partner, and someone to build and grow with. You are the hand I want to hold through every season of my life.
+            </p>
+            <p>
+              God saw me at my lowest and gave me you when I least expected it. In finding you, I found a level of joy I never knew existed. Thank you for watching out for me, for believing in me, and for being my source of strength and peace. Most importantly, <em>thank you for saving my life.</em>
+            </p>
+            <p>
+              I'll never get tired of loving you. April 21st is all about you — it will always be the most special day to me. 🧡
+            </p>
+          </div>
+          <div class="letter-footer">
+            <span class="letter-sign">With all my love,</span>
+            <span class="letter-name">Your one and only 💛</span>
+          </div>
+          <div class="letter-seal">🧡</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SECTION 3: PHOTO GALLERY ======= -->
+  <section id="gallery" class="section gallery-section">
+    <div class="section-glow"></div>
+    <div class="section-content">
+      <div class="section-tag">📸 Our Moments</div>
+      <h2 class="section-title">Memories That Make Me Smile</h2>
+      <p class="section-subtitle">Every picture tells our story 🧡</p>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Photo placeholders — replace src with real images later -->
+        <div class="photo-card" data-caption="The day everything changed 🧡">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span class="photo-icon">📷</span>
+              <span>Your photo goes here</span>
+            </div>
+          </div>
+          <div class="photo-caption">The day everything changed 🧡</div>
+        </div>
+
+        <div class="photo-card large" data-caption="My favorite smile in the world">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span class="photo-icon">💛</span>
+              <span>Your photo goes here</span>
+            </div>
+          </div>
+          <div class="photo-caption">My favorite smile in the world</div>
+        </div>
+
+        <div class="photo-card" data-caption="Adventures with you are the best">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span class="photo-icon">🌟</span>
+              <span>Your photo goes here</span>
+            </div>
+          </div>
+          <div class="photo-caption">Adventures with you are the best</div>
+        </div>
+
+        <div class="photo-card" data-caption="My heart, right here ✨">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span class="photo-icon">🧡</span>
+              <span>Your photo goes here</span>
+            </div>
+          </div>
+          <div class="photo-caption">My heart, right here ✨</div>
+        </div>
+
+        <div class="photo-card large" data-caption="This one's my forever favorite">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span class="photo-icon">🎂</span>
+              <span>Your photo goes here</span>
+            </div>
+          </div>
+          <div class="photo-caption">This one's my forever favorite</div>
+        </div>
+
+        <div class="photo-card" data-caption="Just us against the world 🌍">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <span class="photo-icon">💫</span>
+              <span>Your photo goes here</span>
+            </div>
+          </div>
+          <div class="photo-caption">Just us against the world 🌍</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-inner">
+        <img id="lightbox-img" src="" alt="" />
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SECTION 4: WHY I LOVE YOU CARDS ======= -->
+  <section id="cards" class="section cards-section">
+    <div class="section-glow"></div>
+    <div class="section-content">
+      <div class="section-tag">💛 Click Each Card</div>
+      <h2 class="section-title">Why I Love You</h2>
+      <p class="section-subtitle">Click each card to reveal a reason 🧡</p>
+
+      <div class="cards-grid" id="love-cards">
+
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">5</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>Your big, beautiful heart. You love so deeply — and I am the luckiest person alive to be loved by you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">6</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>The way you light up when you talk about something you love. I could watch that forever.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">7</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>Your smile. It's the first thing I think about in the morning and the last thing at night.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">8</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>That smile of yours — the full length and breadth of it — breaks me every single time. It's impossible not to smile back. 😊</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">9</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>The way you walk — like the world is your runway. Effortless. Confident. Absolutely stunning every single step. 👑</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">10</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>Your caramel skin — warm, beautiful, and absolutely perfect. You glow, Nina. You genuinely glow. 🍯</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">11</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>Your vibes. There's an energy you carry that just draws people in — warm, real, and unapologetically you. I'm addicted to it. ✨</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">12</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>Talking with you is my favorite place to be. You make every conversation feel safe, deep, and alive. I could talk to you forever. 💬</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">13</span>
+              <span class="card-hint">Tap to reveal</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>Your cooking. Every meal you make is made with love — and I taste it every single time. You feed my soul, not just my stomach. 🍽️</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="love-card special" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="card-number">🧡</span>
+              <span class="card-hint">For last</span>
+              <div class="card-glow-ring"></div>
+            </div>
+            <div class="card-back">
+              <p>I love you because you are you — completely, perfectly, beautifully you. Happy Birthday, Nina. 🎂</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="cards-progress" id="cards-progress">
+        <span id="cards-count">0</span> / 10 revealed 💛
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SECTION 5: FINALE ======= -->
+  <section id="finale" class="section finale-section">
+    <div class="section-glow"></div>
+    <div class="section-content finale-content">
+      <div class="finale-ring">🎂</div>
+      <h2 class="finale-title">
+        Here's to you, <span class="accent">Nina</span> 🥂
+      </h2>
+      <p class="finale-text">
+        May this year bring you everything your heart desires —<br />
+        laughter, adventures, growth, and so much love.
+      </p>
+      <p class="finale-love">
+        I love you more than words could ever say. 🧡
+      </p>
+
+      <button class="fire-btn" onclick="launchFireworks()" id="fireworks-btn">
+        🎆 Launch Fireworks!
+      </button>
+
+      <div class="share-section">
+        <p class="share-label">Share the love 💛</p>
+        <div class="share-buttons">
+          <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </button>
+          <button class="share-btn copy" onclick="copyLink()" id="copy-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= LOCAL AUDIO PLAYER ======= -->
+  <audio id="bg-music" src="perfectAudio.mp3" loop></audio>
+
+  <!-- ======= FLOATING MUSIC BUTTON ======= -->
+  <button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Play / Pause music">
+    <span class="music-icon playing-icon">🎵</span>
+    <span class="music-icon paused-icon" style="display:none">⏸</span>
+    <div class="music-ripple"></div>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
