@@ -27,6 +27,14 @@ function toggleMusic(forcePlay = false) {
 
   if (!bgMusic) return;
 
+  // Add error listener once
+  if (!bgMusic.onerror) {
+    bgMusic.onerror = () => {
+      console.error("Audio file not found or failed to load.");
+      btn.title = "Music file missing";
+    };
+  }
+
   if (musicPlaying && !forcePlay) {
     bgMusic.pause();
     musicPlaying = false;
@@ -34,7 +42,6 @@ function toggleMusic(forcePlay = false) {
     playIcon.style.display = '';
     pauseIcon.style.display = 'none';
   } else {
-    // Browsers block autoplay until interaction. ForcePlay handles the 'start' button click.
     bgMusic.play().then(() => {
       musicPlaying = true;
       btn.classList.add('is-playing');
@@ -42,7 +49,7 @@ function toggleMusic(forcePlay = false) {
       pauseIcon.style.display = '';
       haptic([30, 20, 30]);
     }).catch(err => {
-      console.warn("Audio playback delayed until interaction:", err);
+      console.warn("Autoplay blocked. Click the button to start music.", err);
     });
   }
 }
