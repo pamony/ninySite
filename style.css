@@ -524,8 +524,13 @@ body {
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr; /* Single column for TikTok feel */
-    gap: 40px; /* Even more space on mobile */
+    grid-auto-rows: auto; /* Force rows to grow with the cards */
+    gap: 48px; /* Extra breathing room for scrolling */
     padding: 0 10px;
+  }
+  
+  .photo-card {
+    height: auto; /* Avoid height constraints */
   }
 }
 
