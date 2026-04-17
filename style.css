@@ -1073,3 +1073,26 @@ body {
   .hero-title .title-line { font-size: clamp(2.5rem, 12vw, 5rem); }
   .name-shine { font-size: clamp(3rem, 16vw, 7rem) !important; }
 }
+
+/* Footer Signature */
+footer {
+  padding: 60px 0 80px;
+  text-align: center;
+  background: var(--dark-900);
+}
+
+.footer-signature {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.footer-signature:hover {
+  opacity: 1;
+  color: var(--orange-300);
+  text-shadow: 0 0 10px rgba(255,152,0,0.5);
+}
