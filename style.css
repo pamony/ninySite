@@ -537,7 +537,8 @@ body {
   position: relative;
 }
 
-.photo-frame img {
+.photo-frame img,
+.gallery-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -545,7 +546,8 @@ body {
   transition: var(--transition);
 }
 
-.photo-card:hover img {
+.photo-card:hover img,
+.photo-card:hover .gallery-video {
   transform: scale(1.08);
 }
 

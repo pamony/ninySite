@@ -331,18 +331,40 @@ function flipCard(card) {
 document.querySelectorAll('.photo-card').forEach(card => {
   card.addEventListener('click', () => {
     const img = card.querySelector('img');
+    const video = card.querySelector('.gallery-video');
     const caption = card.dataset.caption;
-    if (!img) return; // placeholder, no lightbox
 
     const lightbox = document.getElementById('lightbox');
-    document.getElementById('lightbox-img').src = img.src;
+    const lbImg = document.getElementById('lightbox-img');
+    const lbVid = document.getElementById('lightbox-video');
+    
+    // Hide both initially
+    lbImg.style.display = 'none';
+    lbVid.style.display = 'none';
+    lbVid.pause();
+
+    if (video) {
+      lbVid.src = video.src;
+      lbVid.style.display = 'block';
+      lbVid.play();
+    } else if (img) {
+      lbImg.src = img.src;
+      lbImg.style.display = 'block';
+    } else {
+      return; // placeholder
+    }
+
     document.getElementById('lightbox-caption').textContent = caption;
     lightbox.classList.add('open');
   });
 });
 
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
+  const lightbox = document.getElementById('lightbox');
+  const lbVid = document.getElementById('lightbox-video');
+  lightbox.classList.remove('open');
+  lbVid.pause();
+  lbVid.src = ""; // Clear src to stop loading
 }
 
 document.addEventListener('keydown', (e) => {
